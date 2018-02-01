@@ -22,7 +22,7 @@ pipeline {
             }
             post {
                 success {
-                    finalLib (slack_channel: '#work-test', color: '#00FF00', message: "Build is success (${env.BUILD_URL})")
+                    finalLib (slack_channel: '#work-test', email: 'vijay45kmar@gmail.com', color: '#00FF00', message: "Build is success (${env.BUILD_URL})", subject: "${env.service} Pipeline Notification")
                 }
                 failure {
                     finalLib (slack_channel: '#libra-test',  color: '#FF0000', message: "Build failed (${env.BUILD_URL})")
